@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import chat, models
+from app.routers import chat
 from app.config import settings
 
 app = FastAPI(
@@ -18,14 +18,3 @@ app.add_middleware(
 )
 
 app.include_router(chat.router, prefix="/api/v1", tags=["chat"])
-# app.include_router(models.router, prefix="/api/v1", tags=["models"])
-
-
-# @app.get("/", tags=["health"])
-# async def root():
-#     return {"status": "ok", "message": "Hugging Face LLM API is running"}
-
-
-# @app.get("/health", tags=["health"])
-# async def health_check():
-#     return {"status": "healthy", "model": settings.default_model}
