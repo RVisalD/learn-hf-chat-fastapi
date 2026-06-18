@@ -4,7 +4,7 @@ from functools import lru_cache
 
 class Settings(BaseSettings):
     huggingface_api_key: str = ""
-    default_model: str = "meta-llama/Llama-3.2-8B-Instruct"
+    default_model: str = "Qwen/Qwen2.5-7B-Instruct"
     hf_inference_url: str = "https://router.huggingface.co/hf-inference/models"
     max_new_tokens: int = 512
     temperature: float = 0.7
